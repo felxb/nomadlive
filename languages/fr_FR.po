@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank WordPress Theme\n"
+"POT-Creation-Date: 2015-02-27 21:45-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Flx <fx.brochier@gmail.com>\n"
+"Language-Team: Kevin Plattret <kevin@plattret.me>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:10
+msgid "Page not found"
+msgstr "Page non trouvée"
+
+#: ../404.php:12
+msgid "Return home?"
+msgstr "Retour à la page d'accueil ?"
+
+#: ../functions.php:76
+msgid "Header Menu"
+msgstr "Menu d'entête"
+
+#: ../header.php:60
+msgid "Take part to NOMAD livecast using form below"
+msgstr "Prenez part au livecast à l'aide du formulaire ci-dessous"
+
+#: ../index.php:11
+msgid ""
+"NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us "
+"your facetime/skype/hangout info or video link of all sorts.</a>."
+msgstr ""
+"NOMAD est un mouvement. Participez en <a class=\"thumbSubmit\" href=\"#"
+"\">nous envoyant vos informations facetime/skype/hangout info ou un lien "
+"vidéo</a>."
+
+#: ../loop.php:58 ../page.php:25 ../single.php:40
+msgid "Sorry, nothing to display."
+msgstr "Désolé, aucun contenu disponible."
+
+#: ../search.php:7
+#, php-format
+msgid "%s Search Results for "
+msgstr "%s Résultats de recherche pour "
+
+#: ../searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Rechercher"
+
+#: ../searchform.php:4
+msgid "Search"
+msgstr "Rechercher"
+
+#~ msgid "Archives"
+#~ msgstr "Archives"
+
+#~ msgid "Author Archives for "
+#~ msgstr "Archives de l'auteur "
+
+#~ msgid "About "
+#~ msgstr "À propos"
+
+#~ msgid "Published by"
+#~ msgstr "Publié par"
+
+#~ msgid "Leave your thoughts"
+#~ msgstr "Laissez vos commentaires"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Commentaire"
+
+#~ msgid "% Comments"
+#~ msgstr "% Comentaires"
+
+#~ msgid "Categories for "
+#~ msgstr "Catégories pour "
+
+#~ msgid "Post is password protected. Enter the password to view any comments."
+#~ msgstr ""
+#~ "Cet article est protégé par un mot de passe. Merci d'entrer le mot de "
+#~ "passe pour voir les commentaires."
+
+#~ msgid "Comments are closed here."
+#~ msgstr "Les commentaires sont fermés."
+
+#~ msgid "Powered by"
+#~ msgstr "Propulsé par"
+
+#~ msgid "Sidebar Menu"
+#~ msgstr "Menu de barre latérale"
+
+#~ msgid "Extra Menu"
+#~ msgstr "Menu supplémentaire"
+
+#~ msgid "Widget Area 1"
+#~ msgstr "Zone de widget 1"
+
+#~ msgid "Description for this widget-area..."
+#~ msgstr "Description pour cette zone à widget..."
+
+#~ msgid "Widget Area 2"
+#~ msgstr "Zone de widget 2"
+
+#~ msgid "View Article"
+#~ msgstr "Voir l'article"
+
+#~ msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+#~ msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dit:</span>"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Votre commentaire est en attente de modération."
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s à %2$s"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Éditer)"
+
+#~ msgid "HTML5 Blank Custom Post"
+#~ msgstr "Article personnalisé"
+
+#~ msgid "Add New"
+#~ msgstr "Ajouter nouveau"
+
+#~ msgid "Add New HTML5 Blank Custom Post"
+#~ msgstr "Ajouter un article personnalisé"
+
+#~ msgid "Edit"
+#~ msgstr "Éditer"
+
+#~ msgid "Edit HTML5 Blank Custom Post"
+#~ msgstr "Éditer l'article personnalisé"
+
+#~ msgid "New HTML5 Blank Custom Post"
+#~ msgstr "Nouvel article personnalisé"
+
+#~ msgid "View HTML5 Blank Custom Post"
+#~ msgstr "Voir l'article personnalisé"
+
+#~ msgid "Search HTML5 Blank Custom Post"
+#~ msgstr "Rechercher un article personnalisé"
+
+#~ msgid "No HTML5 Blank Custom Posts found"
+#~ msgstr "Aucun article personnalisé trouvé"
+
+#~ msgid "No HTML5 Blank Custom Posts found in Trash"
+#~ msgstr "Aucun article personnalisé trouvé dans la corbeille"
+
+#~ msgid "Latest Posts"
+#~ msgstr "Articles récents"
+
+#~ msgid "Tags: "
+#~ msgstr "Tags : "
+
+#~ msgid "Categorised in: "
+#~ msgstr "Classés dans :"
+
+#~ msgid "This post was written by "
+#~ msgstr "Cet article a été écrit par "
+
+#~ msgid "Tag Archive: "
+#~ msgstr "Archives de tags : "
+
+#~ msgid "%s results for "
+#~ msgstr "%s résultats pour "
