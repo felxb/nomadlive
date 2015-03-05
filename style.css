@@ -185,16 +185,16 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
 }
-#wrapper {
+.wrapper {
     width: 100%;
     height: auto;
     padding: 0;
     margin: 0;
 }
-#player-container {
+.player-container {
     clear: both;
 }
-#main-player {
+.main-player {
     position: relative;
 
     height: 0;
@@ -202,10 +202,10 @@ table {
     padding-bottom: 56%;
     overflow: hidden;
 }
-#main-player.vimeo-player {
+.vimeo-player {
     padding-bottom: 54.5%;
 }
-#main-player iframe {
+.main-player iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -223,28 +223,26 @@ table {
     cursor: help;
 }
 .video-gallery {
-    margin: 0!important;
+    margin: 0;
 }
 body {
     width: 100%;
     overflow-x: hidden;
-
-    background: #000!important;
+    background: #000;
 }
 .ticker-container {
     height: 60px;
     clear: both;
-
     color: #fff!important;
 }
 
-#logos img {
+.header-menu img {
     display: inline-block;
     height: 5vw;
-    margin-right: 4%!important;
-    margin-left: 0!important;
+    margin-right: 4%;
+    margin-left: 0;
 }
-#logos img#logo-sennheiser {
+#logo-sennheiser {
     height: 2vw;
 }
 .thumb img,
@@ -291,9 +289,8 @@ body {
     z-index: 1000;
 
     display: none;
-    width: 90%;
+    width: 100%;
     height: auto;
-    padding: 5%;
 
     font-weight: normal;
     line-height: 1em;
@@ -308,11 +305,10 @@ body {
 }
 .video-title {
     position: relative;
+    padding: 2%;
 
-    width: 100%;
-    height: 100%;
 }
-div#ticker-container {
+#ticker-container {
     z-index: 1000;
 
     display: block;
@@ -332,13 +328,12 @@ div#ticker-container {
     font-style: italic;
 }
 
-div#project-description {
+#project-description {
     position: absolute;
     z-index: 90000;
 
     display: none;
     width: 52%;
-    padding: 1%;
     margin-top: 2%;
 
     text-align: left;
@@ -349,10 +344,7 @@ div#project-description {
     background: #eee;
 }
 #project-description p {
-    padding: 0 0 1em;
-}
-#project-description p:last-child {
-    padding: 0;
+    padding: 1em;
 }
 .form-overlay {
     position: fixed;
@@ -561,6 +553,23 @@ span.wpcf7-not-valid-tip {
     font-size: .5em;
 }
 
+.default-search-title,
+.default-tag-title {
+    font-size: 3em;
+
+    text-transform: uppercase;
+}
+.default-search-title img,
+.default-tag-title img {
+    width: auto;
+    height: .8em;
+}
+.default-search-title .nomad-x,
+.default-tag-title .nomad-x {
+    font-size: .5em;
+}
+
+
 .sidebar {
     position: absolute;
     top: 0;
@@ -599,7 +608,7 @@ span.wpcf7-not-valid-tip {
 
     background-color: black;
 }
-.toggle-sidebar span.menu-icon-text {
+.toggle-sidebar .menu-icon-text {
     font-size: .3em;
 
     text-transform: uppercase;
@@ -939,7 +948,7 @@ input:-ms-input-placeholder {
         padding: 0!important;
         margin: .5em!important;
     }
-    #main-player {
+    .main-player {
         clear: both;
     }
     .social-links a {

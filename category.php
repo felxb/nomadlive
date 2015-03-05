@@ -26,7 +26,7 @@
 					<?php single_cat_title(); ?>
 					<?php echo "<span class='nomad-x'>x</span>";?>
 		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
-		            </div>
+	            </div>
 		        <?php }?>
 	            <div id="project-description">
 		            <?php $description=category_description();?>
@@ -73,13 +73,6 @@
 		<section>
 			<!-- gallery -->
 			<div id="gallery" class="section group">
-			    <?php if( $displayHomeBool ){?>
-				<article class="thumb col span_1_of_4 non-selectable" id="thumb0">
-				    <a href="#" data-link="" data-type="" data-content="<iframe width='660' height='387' src='http://www.ustream.tv/embed/18155672?ub=85a901&amp;lc=85a901&amp;oc=ffffff&amp;uc=ffffff&amp;v=3&amp;wmode=direct&amp;autoplay=true' scrolling='no' frameborder='0' style='border: 0px none transparent;'></iframe>">
-				        <img src="<?php echo get_template_directory_uri();?>/inc/img/to-live.png"/>
-				    </a>
-				</article>
-				<?php } ?>
 				<?php get_template_part('loop'); ?>
 				<?php get_template_part('pagination'); ?>
 			</div>

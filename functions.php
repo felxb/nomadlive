@@ -2,7 +2,7 @@
 /*
     Theme Name: NOMADlive
     Theme URI: http://nomadlive.tv
-    Description: HTML5 NOMAD Live Theme
+    Description: NOMAD Live Theme
     Version: 1.0
     Author: Felix Brochier (@felixbroc)
     Author URI: http://shufflenote.ca

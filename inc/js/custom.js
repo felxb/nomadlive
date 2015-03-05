@@ -45,19 +45,19 @@ jQuery(document).ready(function(){
 	}
 
 	jQuery(".thumb a").click(function(e){
-		e.preventDefault()
+		e.preventDefault();
 		jQuery(".thumb a").each(function(){jQuery(this).removeClass("currently-playing");});
 		jQuery(this).addClass("currently-playing");
 		currentTitle=jQuery(".currently-playing .video-title").text();
 		ga('send', 'event', 'button', 'play', currentTitle );
-		content=jQuery(this).attr("data-content")
-		type=jQuery(this).attr("data-type")
-		jQuery("#main-player").html(content)  
+		content=jQuery(this).attr("data-content");
+		type=jQuery(this).attr("data-type");
+		jQuery(".main-player").html(content);
 		jQuery('html, body').animate({
-			scrollTop: jQuery("#main-player").offset().top
+			scrollTop: jQuery(".main-player").offset().top
 		}, 300);
-		jQuery('#main-player iframe').load(function(){
-			jQuery('#main-player').attr("class",type+"-player");
+		jQuery('.main-player iframe').load(function(){
+			jQuery('.main-player').attr("class",type+"-player");
 			if(type=="vimeo") {
 				id = jQuery(this).attr("id");
 				$f(id).addEvent('ready', function(id){
@@ -92,22 +92,22 @@ jQuery(document).ready(function(){
 	}
 	
 	jQuery(".thumbSubmit").click(function(e){
-		e.preventDefault()
-		jQuery(".form-overlay").show()
-	})
+		e.preventDefault();
+		jQuery(".form-overlay").show();
+	});
 	jQuery(".form-quit").click(function(e){
-		e.preventDefault()
-		jQuery(".form-overlay").hide()
-	})
+		e.preventDefault();
+		jQuery(".form-overlay").hide();
+	});
 	jQuery(".form-close").click(function(e){
-		e.preventDefault()
-		jQuery(".form-overlay").hide()
-	})
+		e.preventDefault();
+		jQuery(".form-overlay").hide();
+	});
 	jQuery(".form-overlay").click(function(event) { 
 		if(!jQuery(event.target).closest('.form-overlay-container').length) {
-			jQuery(".form-overlay").hide()
+			jQuery(".form-overlay").hide();
 		}
-	})
+	});
    
 	if (!Modernizr.touch){
 	jQuery(".thumb a").hover(
@@ -121,11 +121,11 @@ jQuery(document).ready(function(){
 	if(jQuery(".show-desc-onHover")){
 		jQuery(".header-img").mouseenter(function(){
 			clearTimeout(jQuery(this).data('timeoutId'));
-			jQuery(this).find(".show-desc-onHover").show()
+			jQuery(this).find(".show-desc-onHover").show();
 		}).mouseleave(function(){
 				var titleImg = jQuery(this),
 					timeoutId = setTimeout(function(){
-						titleImg.find(".show-desc-onHover").hide()
+						titleImg.find(".show-desc-onHover").hide();
 					}, 650);
 				titleImg.data('timeoutId', timeoutId); 
 		});
