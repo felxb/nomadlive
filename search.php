@@ -3,11 +3,11 @@
 	<div id="main">
 
 		<!-- title -->
-		<div id="nomad-header-title" class="header-title">
-        	<div id="nomad-header-img" class="header-img non-selectable">
+		<div id="search-header-title" class="header-title">
+        	<div id="search-header-img" class="header-img non-selectable">
         	    <div class="toggle-sidebar sf-rollback non-selectable"><i class="fa fa-bars"></i><span class="menu-icon-text">menu</span>	</div>	
 	            <div class="default-search-title">
-					<?php echo get_search_query(); ?>
+					<span class="search-query-title"><?php echo get_search_query(); ?></span>
 					<?php echo "<span class='nomad-x'>x</span>";?>
 		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 	            </div>

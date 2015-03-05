@@ -57,7 +57,8 @@ jQuery(document).ready(function(){
 			scrollTop: jQuery(".main-player").offset().top
 		}, 300);
 		jQuery('.main-player iframe').load(function(){
-			jQuery('.main-player').attr("class",type+"-player");
+			jQuery('#main-player').attr("class",type+"-player");
+			jQuery('#main-player').addClass("main-player");
 			if(type=="vimeo") {
 				id = jQuery(this).attr("id");
 				$f(id).addEvent('ready', function(id){

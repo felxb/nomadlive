@@ -538,34 +538,19 @@ span.wpcf7-not-valid-tip {
 }
 
 .default-category-title,
-.default-tag-title {
+.default-tag-title, .default-search-title{
     font-size: 3em;
-
     text-transform: uppercase;
+    display: inline-block;
+    width: 90%;
 }
 .default-category-title img,
-.default-tag-title img {
+.default-tag-title img, .default-search-title img{
     width: auto;
     height: .8em;
 }
 .default-category-title .nomad-x,
-.default-tag-title .nomad-x {
-    font-size: .5em;
-}
-
-.default-search-title,
-.default-tag-title {
-    font-size: 3em;
-
-    text-transform: uppercase;
-}
-.default-search-title img,
-.default-tag-title img {
-    width: auto;
-    height: .8em;
-}
-.default-search-title .nomad-x,
-.default-tag-title .nomad-x {
+.default-tag-title .nomad-x , .default-search-title .nomad-x{
     font-size: .5em;
 }
 
@@ -807,6 +792,14 @@ input:-ms-input-placeholder {
 #sf-sidebar .sf-rollback {
     right: -2px!important;
 }
+.nomad-live-nothing {
+    padding:1%;
+    font-size:2em;
+}
+
+
+
+
 
 
 
