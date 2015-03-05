@@ -78,6 +78,7 @@
     <!-- nothing -->
     <div class="nomad-live-nothing">
         <h2><?php _e( 'Oops. Your query did not return any post. Try to use the search form below to find what you are looking for.', 'nomadlive' ); ?></h2>
+        <?php get_search_form( true ); ?>
     </div>
     <!-- /nothing -->
 
