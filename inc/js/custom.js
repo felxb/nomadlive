@@ -44,8 +44,23 @@ jQuery(document).ready(function(){
 		player[0].contentWindow.postMessage(data, url);
 	}
 
+	window.addEventListener('popstate', function(event) {
+	  var state = event.state;
+	  	window.location.href = state.link;
+	});
 	jQuery(".thumb a").click(function(e){
 		e.preventDefault();
+
+		title = jQuery('.video-title', this).text();
+		if(jQuery("#single-query-title .query")){
+			jQuery("#single-query-title .query").html(title);
+		}
+		state= [];
+		state.thumbid = jQuery(this).parent().attr("id");
+		state.link = jQuery(this).attr('href');
+		window.history.pushState(state, title, jQuery(this).attr('href'));
+		document.title = title;
+
 		jQuery(".thumb a").each(function(){jQuery(this).removeClass("currently-playing");});
 		jQuery(this).addClass("currently-playing");
 		currentTitle=jQuery(".currently-playing .video-title").text();
@@ -71,18 +86,6 @@ jQuery(document).ready(function(){
 		});
     });
 
-/*	jQuery(".toggle-sidebar").hover(function (){
-    	if (!jQuery(this).hasClass("toggled")) {
-	    	jQuery(".toggle-sidebar").addClass("toggled");
-	    	jQuery(".wrapper").animate({left:"25%"},400);
-	    	jQuery(".sidebar").animate({left:"0"},400);
-	    } else {
-	    	jQuery(".toggle-sidebar").removeClass("toggled");
-	    	jQuery(".wrapper").animate({left:"0%"},400);
-	    	jQuery(".sidebar").animate({left:"-25%"},400);
-	    }
-
-    });*/
 	if(jQuery("html").attr("lang")=="fr-FR"){
 		jQuery(".mtphr-dnt-twitter-time").each(function() {
 	       tweetTime=jQuery(this).html();
@@ -109,7 +112,8 @@ jQuery(document).ready(function(){
 			jQuery(".form-overlay").hide();
 		}
 	});
-   
+	jQuery('.thumb').click(function() {  
+	});
 	if (!Modernizr.touch){
 	jQuery(".thumb a").hover(
 		function() {
