@@ -17,8 +17,6 @@
             </div>
         </div>
 		<!-- /title -->
-		<!-- titletest -->
-		<!-- /titletest -->
 
 		<!-- player -->
 		<?php get_template_part('player'); ?>
