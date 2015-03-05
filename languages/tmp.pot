@@ -1,9 +1,7 @@
-Page not found
-Return home?
+NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us your facetime/skype/hangout info or any video link you would like to share</a>.
 Header Menu
-Take part to NOMAD livecast using form below
-NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us your facetime/skype/hangout info or video link of all sorts.</a>.
+Take part to NOMAD livecast
+Oops. We cannot find what you are looking for. Maybe a search can help?
+Search NOMADlive.tv
 Sorry, nothing to display.
-%s Search Results for 
-To search, type and hit enter.
-Search
+NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.

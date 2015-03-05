@@ -24,7 +24,7 @@
 		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 	            </div>
 		        <?php }?>
-	            <div id="project-description">
+	            <div class="project-description show-desc-onHover">
 		            <?php $description=category_description();?>
 		            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
 					<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
@@ -78,7 +78,7 @@
 		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 		            </div>
 		        <?php endif; ?>
-	            <div id="project-description">
+	            <div class="project-description show-desc-onHover">
 		            <?php $description=tag_description();?>
 		            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
 					<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
@@ -107,12 +107,29 @@
 				<?php get_template_part('social'); ?>
             </div>
         </div>
+<?php } else if (is_single()) { ?>
+		<div id="single-header-title" class="header-title">
+        	<div id="search-header-img" class="header-img non-selectable">
+        	    <div class="toggle-sidebar sf-rollback non-selectable">
+        	    	<i class="fa fa-bars"></i>
+        	    	<span class="menu-icon-text">menu</span>
+        	    </div>	
+	            <div class="default-search-title">
+					<span class="search-query-title"><?php the_title(); ?></span>
+					<?php echo "<span class='nomad-x'>x</span>";?>
+		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+	            </div>
+            </div>   
+            <div id="social-links-menu" class="header-menu">
+				<?php get_template_part('social'); ?>
+            </div>
+        </div>
 <?php } else { ?>
 		<div id="nomad-header-title" class="header-title">
         	<div id="nomad-header-img" class="header-img non-selectable">
         	    <div class="toggle-sidebar sf-rollback non-selectable"><i class="fa fa-bars"></i><span class="menu-icon-text">menu</span>	</div>	
 	            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo.png" alt="NOMADlive.tv"/>
-	            <div id="project-description" class="show-desc-onHover">
+	            <div class="project-description show-desc-onHover">
 	            <p><?php bloginfo('description'); ?><br/>
 				<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
 	            </div>

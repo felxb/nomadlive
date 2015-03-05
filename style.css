@@ -328,7 +328,7 @@ body {
     font-style: italic;
 }
 
-#project-description {
+.project-description {
     position: absolute;
     z-index: 90000;
 
@@ -343,7 +343,7 @@ body {
 #weather {
     background: #eee;
 }
-#project-description p {
+.project-description p {
     padding: 1em;
 }
 .form-overlay {

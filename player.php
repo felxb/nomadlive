@@ -60,7 +60,7 @@
             <?php endif; ?>	
         <?php } ?>	
 </div>
-<?php } else if (is_search()) { ?>
+<?php } else if (is_search()||is_single()) { ?>
 			<?php $i=1;?>
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             		<?php if ($i==1) {?>
@@ -79,7 +79,6 @@
 						<?php $i++;?>
 					<?php } ?>
             <?php endwhile; endif; ?>	
-
 <?php } else { ?>
 <!-- player-container -->
 <div class="player-container">

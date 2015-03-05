@@ -1,51 +1,39 @@
 <?php get_header(); ?>
+	
+	<div id="main">
 
-	<main role="main">
-	<!-- section -->
-	<section>
+		<!-- title -->
+		<?php get_template_part('title'); ?>
+		<!-- /title -->
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<!-- player -->
+		<?php get_template_part('player'); ?>
+		<!-- /player -->
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<!-- ticker -->
+        <div id="ticker-container">
+			<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(39);} ?>
+		</div>
+		<!-- /ticker -->
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+		<!-- section -->
+		<section>
+			<!-- gallery -->
+			<div id="gallery" class="section group">
+			<?php $args = "posts_per_page=10";?>
+			<?php if(isset($_REQUEST["story"])) {$args .= "&category_name=".$_REQUEST["story"];}?>
+			<?php if(isset($_REQUEST["channel"])) {$args .= "&tag=".$_REQUEST["channel"];}?>
+			
+			<?php $temp_query = $wp_query; ?>
+			<?php query_posts($args); ?>
+			<?php get_template_part('loop'); ?>
+			<?php get_template_part('pagination'); ?>
+			<?php $wp_query = $temp_query; ?>
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
-
-
-			<?php the_content(); // Dynamic Content ?>
-
-
-		</article>
-		<!-- /article -->
-
-	<?php endwhile; ?>
-
-	<?php else: ?>
-
-		<!-- article -->
-		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'nomadlive' ); ?></h1>
-
-		</article>
-		<!-- /article -->
-
-	<?php endif; ?>
-
-	</section>
-	<!-- /section -->
-	</main>
+			</div>
+			<!-- /gallery -->
+		</section>
+		<!-- /section -->
+	</div>
 
 <?php get_footer(); ?>
