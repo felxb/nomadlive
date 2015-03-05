@@ -514,7 +514,7 @@ span.wpcf7-not-valid-tip {
 }
 
 .header-img {
-    width: 55%;
+    width: 65%;
 }
 
 .header-menu,
@@ -524,7 +524,7 @@ span.wpcf7-not-valid-tip {
     vertical-align: baseline;
 }
 .header-menu {
-    width: 42%;
+    width: 32%;
     margin-left: 2%;
 
     text-align: right;
@@ -534,12 +534,13 @@ span.wpcf7-not-valid-tip {
     padding: 1%;
 }
 #nomad-header-img img {
-    margin-bottom: -2%;
+    margin-bottom: -1%;
+    margin-top: -1%;;
 }
 
 .default-category-title,
 .default-tag-title, .default-search-title{
-    font-size: 3em;
+    font-size: 3.2em;
     text-transform: uppercase;
     display: inline-block;
     width: 90%;
@@ -584,7 +585,7 @@ span.wpcf7-not-valid-tip {
 .toggle-sidebar {
     display: inline-block;
     width: 4%;
-    padding: 1%;
+    padding: 1% 1% 1% 0;
 
     font-size: 180%;
     line-height: 0;
@@ -706,9 +707,7 @@ span.wpcf7-not-valid-tip {
     top: auto!important;
     left: auto!important;
 
-    padding: 0!important;
-    margin-top: 10px!important;
-    margin-bottom: 10px!important;
+    padding: 3em 0 3em!important;
 }
 .sf-title h1 {
     padding: 0!important;
@@ -741,31 +740,29 @@ input:focus::-moz-placeholder {
     color: transparent;
 }
 input:focus:-ms-input-placeholder {
-    font-size: .8em;
+    font-size: 1em;
     font-style: italic;
-
-    vertical-align: bottom;
 }
 input::-webkit-input-placeholder {
-    font-size: .8em;
+    font-size: 1em;
     font-style: italic;
 
     vertical-align: bottom;
 }
 input:-moz-placeholder {
-    font-size: .8em;
+    font-size: 1em;
     font-style: italic;
 
     vertical-align: bottom;
 } input::-moz-placeholder {
 
-    font-size: .8em;
+    font-size: 1em;
     font-style: italic;
 
     vertical-align: bottom;
 }
 input:-ms-input-placeholder {
-    font-size: .8em;
+    font-size: 1em;
     font-style: ital;
 }
 #sf-sidebar .sf-scroll .widget-area {
@@ -793,34 +790,22 @@ input:-ms-input-placeholder {
     right: -2px!important;
 }
 .nomad-live-nothing {
-    padding:2%;
+    padding:1%;
     font-size:2em;
 }
-
-/*.search-input {
-  width: 50%;
-  line-height: 2em;
-  padding: 0;
-  display: inline-block;
-  border: none;
-  border-radius: 1em;
-  text-indent: 1em;
-}
-*/
-.search-form{
-  width: 300px;
+.nomad-search-form{
+  width: 100%;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
   margin-top: 1em;
 }
-.search-form .search-input{
-  width: 300px;
-  height: 50px;
-  background: #2b303b;
-  border: none;
+.nomad-search-form .search-input{
+  width: 80%;
+  height: 40px;
+  background: #141414;
+  border: 1px solid #fff;
   font-size: 10pt;
-  float: left;
   color: #262626;
   padding-left: 45px;
   -webkit-border-radius: 5px;
@@ -835,36 +820,47 @@ input:-ms-input-placeholder {
   transition: background .55s ease;
 }
 
-.search-form .search-input::-webkit-input-placeholder {
+.nomad-search-form .search-input::-webkit-input-placeholder {
    color: #65737e;
 }
  
-.search-form .search-input:-moz-placeholder { /* Firefox 18- */
+.nomad-search-form .search-input:-moz-placeholder { /* Firefox 18- */
    color: #65737e;  
 }
  
-.search-form .search-input::-moz-placeholder {  /* Firefox 19+ */
+.nomad-search-form .search-input::-moz-placeholder {  /* Firefox 19+ */
    color: #65737e;  
 }
  
-.search-form .search-input:-ms-input-placeholder {  
+.nomad-search-form .search-input:-ms-input-placeholder {  
    color: #65737e;  
 }
-.search-form .icon{
+.nomad-search-form .icon{
   position: absolute;
   top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
+  margin-left: 2em;
+  margin-top: -0.5em;
   z-index: 1;
   color: #4f5b66;
   font-size: 0.6em;
 }
-.search-form .search-input:hover, .search-form .search-input:focus, .search-form .search-input:active{
+.nomad-search-form .search-input:hover, .nomad-search-form .search-input:focus, .nomad-search-form .search-input:active{
     outline:none;
     background: #ffffff;
   }
+.search .nomad-search-form .icon {
+    margin-left:1em;
+}
+.page {
+  padding: 1%;
+}
 
-
+.page p{
+  padding-bottom: 1em;
+}
+.page p:last-child{
+  padding-bottom: 0;
+}
 
 
 
