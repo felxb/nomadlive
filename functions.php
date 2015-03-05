@@ -269,6 +269,19 @@ function nomadlive_change_tag_base( $value ) {
 }
 
 
+// Pagination
+add_action('init', 'nomadlive_pagination');
+function nomadlive_pagination()
+{
+    global $wp_query;
+    $big = 3;
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $wp_query->max_num_pages
+    ));
+}
 
 /*change contact form spinner*/
 add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');

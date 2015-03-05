@@ -72,6 +72,11 @@
 <!-- /thumb -->   
 <?php $i++;?>
 <?php endwhile; ?>
+<div class="thumbLink thumbSubmit col span_1_of_4 non-selectable">
+    <a href="#" target="_blank" id="NomadLink">
+        <img src="<?php echo get_stylesheet_directory_uri();?>/inc/img/submit-video.png"/>
+    </a>
+</div> 
 
 <?php else: ?>
     <?php get_template_part('nothing'); ?>

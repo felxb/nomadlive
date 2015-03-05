@@ -64,14 +64,16 @@
 			<?php $i=1;?>
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
             		<?php if ($i==1) {?>
-		            	<?php if( get_field( "video_type",get_the_ID()) ): ?>
-			            	<?php $video_type=get_field("video_type",get_the_ID());?>
-			            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
-						    <?php if($video_type=="vimeo") {?>    
-				            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				            <?php } else if ($video_type=="youtube") { ?>
-								<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
-							<?php } ?>	
+		            	<?php if( get_field( "video_type") ): ?>
+		            		<div class="player-container">
+				            	<?php $video_type=get_field("video_type");?>
+				            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
+							    <?php if($video_type=="vimeo") {?>    
+					            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					            <?php } else if ($video_type=="youtube") { ?>
+									<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
+								<?php } ?>	
+								</div>
 							</div>
 		            	<?php endif;?>
 						<?php $i++;?>
