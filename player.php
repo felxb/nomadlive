@@ -85,6 +85,7 @@
 					<?php } ?>
             <?php endwhile; endif; ?>	
 <?php } else { ?>
+
 <!-- player-container -->
 <div class="player-container">
     <div id="main-player" class="main-player live-player">
