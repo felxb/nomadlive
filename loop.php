@@ -1,5 +1,6 @@
 <!-- to live -->
 <?php if (is_tag()){?>
+        <?php $queried_object = get_queried_object(); ?>
         <?php $displayHomeBool = get_field('display_livestream_on_channel_page', $queried_object);?>
         <?php if( $displayHomeBool ){?>
         <div class="thumb col span_1_of_4 non-selectable" id="thumb0">
@@ -8,9 +9,9 @@
             </a>
         </div>
         <?php } ?>
-        <?php $tag = get_queried_object(); ?>
-        <?php $context = "?channel=".$tag->slug;?>
+        <?php $context = "?channel=".$queried_object->slug;?>
 <?php } else if (is_category()){?>
+        <?php $queried_object = get_queried_object(); ?>
         <?php $displayHomeBool = get_field('display_livestream_on_story_page', $queried_object);?>
         <?php if( $displayHomeBool ){?>
         <div class="thumb col span_1_of_4 non-selectable" id="thumb0">
@@ -20,7 +21,7 @@
         </div>
         <?php } ?>
         <?php $cat = get_queried_object(); ?>
-        <?php $context = "?story=".$cat->slug;?>
+        <?php $context = "?story=".$queried_object->slug;?>
 <?php } else if (is_search()) {?>
 <?php } else {?>
         <div class="thumb col span_1_of_4 non-selectable" id="thumb0">

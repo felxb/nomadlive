@@ -1,9 +1,13 @@
 <?php if (is_category()) { ?>
-<div class="player-container">
-    <div id="main-player" class="main-player live-player">
+    <?php $queried_object = get_queried_object(); ?>
+    <?php $taxonomy = $queried_object->taxonomy;?>
+    <?php $term_id = $queried_object->term_id;?>  
+	<div class="player-container">
 		<?php $displayHomeBool = get_field('display_livestream_on_story_page', $queried_object);?>
 		<?php if( $displayHomeBool ){?>
+	    <div id="main-player" class="main-player live-player">
             <iframe width="660" height="387" src="http://www.ustream.tv/embed/18155672?ub=85a901&amp;lc=85a901&amp;oc=ffffff&amp;uc=ffffff&amp;v=3&amp;wmode=direct&amp;autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>
+	    </div>
         <?php } else  { ?>	
 			<?php $i=1;?>
 			<?php $args = array('posts_per_page' => 1, 'cat' => $term_id);?>
@@ -26,11 +30,12 @@
 		        <?php } ?>	
             <?php endif; ?>	
         <?php } ?>	
-    </div>
-</div>
+	</div>
 <?php } else if (is_tag()) { ?>
-<div class="player-container">
-    
+    <?php $queried_object = get_queried_object(); ?>
+    <?php $taxonomy = $queried_object->taxonomy;?>
+    <?php $term_id = $queried_object->term_id;?>  
+	<div class="player-container">
 		<?php $displayHomeBool = get_field('display_livestream_on_channel_page', $queried_object);?>
 		<?php if( $displayHomeBool ){?>
 			<div id="main-player" class="main-player live-player">
@@ -59,7 +64,7 @@
 		        <?php } ?>	
             <?php endif; ?>	
         <?php } ?>	
-</div>
+	</div>
 <?php } else if (is_search()||is_single()) { ?>
 			<?php $i=1;?>
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>

@@ -199,11 +199,11 @@ table {
 
     height: 0;
     padding-top: 35px;
-    padding-bottom: 56%;
+    padding-bottom: 55.5%;
     overflow: hidden;
 }
 .vimeo-player {
-    padding-bottom: 54.5%;
+    padding-bottom: 54%;
 }
 .main-player iframe {
     position: absolute;
@@ -534,7 +534,7 @@ span.wpcf7-not-valid-tip {
     padding: 1%;
 }
 #nomad-header-img img {
-    margin-bottom: -1%;
+    margin-bottom: -2%;
     margin-top: -1%;;
 }
 
