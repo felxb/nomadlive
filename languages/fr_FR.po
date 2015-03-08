@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NOMADlive\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 13:44-0500\n"
-"PO-Revision-Date: 2015-03-05 13:46-0500\n"
+"POT-Creation-Date: 2015-03-08 00:56-0500\n"
+"PO-Revision-Date: 2015-03-08 00:56-0500\n"
 "Last-Translator: Flx <fx.brochier@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,25 +16,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: ../inc\n"
 
-#: ../404.php:12 ../title.php:117
-#, fuzzy
-msgid ""
-"NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us "
-"your facetime/skype/hangout info or any video link you would like to share</"
-"a>."
-msgstr ""
-"NOMAD est un mouvement. Participez en <a class=\"thumbSubmit\" href=\"#"
-"\">nous envoyant vos informations facetime/skype/hangout info ou un lien "
-"vidéo</a>."
-
 #: ../functions.php:76
 msgid "Header Menu"
 msgstr "Menu d'en-tête"
 
-#: ../header.php:60
-#, fuzzy
+#: ../header.php:61
 msgid "Take part to NOMAD livecast"
-msgstr "Prenez part au livecast à l'aide du formulaire ci-dessous"
+msgstr "Prenez part au livecast"
 
 #: ../nothing.php:4
 msgid "Oops. We cannot find what you are looking for. Maybe a search can help?"
@@ -46,12 +34,7 @@ msgstr ""
 msgid "Search NOMADlive.tv"
 msgstr "Chercher dans NOMADlive.tv"
 
-#: ../single.php:40
-msgid "Sorry, nothing to display."
-msgstr "Désolé, aucun contenu disponible."
-
-#: ../title.php:30 ../title.php:84
-#, fuzzy
+#: ../title.php:30 ../title.php:84 ../title.php:137 ../title.php:191
 msgid ""
 "NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us "
 "your facetime/skype/hangout info or any video link you would like to share.</"
@@ -60,6 +43,20 @@ msgstr ""
 "NOMAD est un mouvement. Participez en <a class=\"thumbSubmit\" href=\"#"
 "\">nous envoyant vos informations facetime/skype/hangout info ou un lien "
 "vidéo</a>."
+
+#: ../title.php:225
+#, fuzzy
+msgid ""
+"NOMAD is a movement. Join by <a class=\"thumbSubmit\" href=\"#\">sending us "
+"your facetime/skype/hangout info or any video link you would like to share</"
+"a>."
+msgstr ""
+"NOMAD est un mouvement. Participez en <a class=\"thumbSubmit\" href=\"#"
+"\">nous envoyant vos informations facetime/skype/hangout info ou un lien "
+"vidéo</a>."
+
+#~ msgid "Sorry, nothing to display."
+#~ msgstr "Désolé, aucun contenu disponible."
 
 #~ msgid "Page not found"
 #~ msgstr "Page non trouvée"
