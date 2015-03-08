@@ -58,7 +58,7 @@
 		<div class="form-overlay">
 			<div class="form-overlay-container">	
 				<div class="form-close"><img src="<?php echo get_template_directory_uri();?>/inc/img/close.png"/></div>
-				<div class="form-title"><?php echo __("Take part to NOMAD livecast");?></div>
+				<div class="form-title"><?php echo _e("Take part to NOMAD livecast","nomadlive");?></div>
 				<?php echo do_shortcode('[contact-form-7 id="41" title="Join NOMAD"]');?>
 		   </div>
 		</div>
