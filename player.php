@@ -1,4 +1,6 @@
 <?php if (is_category()) { ?>
+<!-- test -->
+
     <?php $queried_object = get_queried_object(); ?>
     <?php $taxonomy = $queried_object->taxonomy;?>
     <?php $term_id = $queried_object->term_id;?>  
