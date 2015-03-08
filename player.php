@@ -19,7 +19,7 @@
 			            	<?php $video_type=get_field("video_type",$post->ID);?>
 			            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
 						    <?php if($video_type=="vimeo") {?>    
-				            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				            <?php } else if ($video_type=="youtube") { ?>
 								<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
 							<?php } ?>	
@@ -53,7 +53,7 @@
 			            	<?php $video_type=get_field("video_type",$post->ID);?>
 			            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
 						    <?php if($video_type=="vimeo") {?>    
-				            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				            <?php } else if ($video_type=="youtube") { ?>
 								<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
 							<?php } ?>	
@@ -74,7 +74,7 @@
 				            	<?php $video_type=get_field("video_type");?>
 				            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
 							    <?php if($video_type=="vimeo") {?>    
-					            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					            <?php } else if ($video_type=="youtube") { ?>
 									<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
 								<?php } ?>	
@@ -83,7 +83,11 @@
 		            	<?php endif;?>
 						<?php $i++;?>
 					<?php } ?>
-            <?php endwhile; endif; ?>	
+            <?php endwhile; ?>
+			<?php endif; ?>	
+
+<?php } else if (is_404()){ ?>
+
 <?php } else { ?>
 
 <!-- player-container -->

@@ -20,9 +20,8 @@
 		<section>
 			<!-- gallery -->
 			<div id="gallery" class="section group">
-			<?php $args = "posts_per_page=10";?>
-			<?php if(isset($_REQUEST["story"])) {$args .= "&category_name=".$_REQUEST["story"];}?>
-			<?php if(isset($_REQUEST["channel"])) {$args .= "&tag=".$_REQUEST["channel"];}?>
+			<?php if(isset($_REQUEST["story"])) {$args .= "category_name=".$_REQUEST["story"];}?>
+			<?php if(isset($_REQUEST["channel"])) {$args .= "tag=".$_REQUEST["channel"];}?>
 			
 			<?php $temp_query = $wp_query; ?>
 			<?php query_posts($args); ?>

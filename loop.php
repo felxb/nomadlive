@@ -39,7 +39,7 @@
 <div class="thumb col span_1_of_4 non-selectable" id="thumb<?php echo $i;?>" title="<?php the_title(); ?>" data-url="">
     <?php if( get_field( "video_type" ) ): $video_type=get_field("video_type");endif;?>
     <?php if($video_type=="vimeo") {?>    
-    <a href="<?php echo get_the_permalink().$context;?>" data-type="<?php echo $video_type;?>" data-content="<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>">
+    <a href="<?php echo get_the_permalink().$context;?>" data-type="<?php echo $video_type;?>" data-content="<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>">
         <div class="video-title-container non-selectable">
             <div class="video-title">
                 <?php the_title(); ?>

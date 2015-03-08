@@ -89,7 +89,7 @@
 					<?php get_template_part('social'); ?>
 	            </div>
 	        </div>
-<?php } else if (is_search()) { ?>
+<?php } else if (is_search()||is_404()) { ?>
 		<div id="search-header-title" class="header-title">
         	<div id="search-header-img" class="header-img non-selectable">
         	    <div class="toggle-sidebar sf-rollback non-selectable">

@@ -202,6 +202,10 @@ table {
     padding-bottom: 55.5%;
     overflow: hidden;
 }
+.empty-player {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .vimeo-player {
     padding-bottom: 54%;
 }
@@ -338,7 +342,8 @@ body {
 
     text-align: left;
 
-    background: url(inc/img/transp-black-85.png) repeat transparent;
+    background: transparent;
+    text-shadow: 0px 0px 4em #000;
 }
 #weather {
     background: #eee;
@@ -855,7 +860,9 @@ input:-ms-input-placeholder {
 .page p:last-child{
   padding-bottom: 0;
 }
-
+.search-form-container {
+  margin-bottom: 2%;
+}
 
 
 
