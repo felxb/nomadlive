@@ -222,6 +222,7 @@ table {
     height: auto;
     max-width: 90%;
     margin-left: 0;
+    max-height: 120px;
 }
 .show-desc-onHover {
     cursor: help;
@@ -242,13 +243,21 @@ body {
 
 .header-menu img {
     display: inline-block;
-    height: 5vw;
+    height: 4vw;
     margin-right: 4%;
     margin-left: 0;
 }
-#logo-sennheiser {
-    height: 2vw;
+#stories-links-menu {
+  text-transform: uppercase;
 }
+#stories-links-menu a, #stories-links-menu a:link, #stories-links-menu a:visited{
+  color:#fff;
+}
+#stories-links-menu a:hover{
+  color:#bf942f;
+}
+
+
 .thumb img,
 .thumbLink img {
     width: 100%;
@@ -605,6 +614,9 @@ span.wpcf7-not-valid-tip {
 
     background-color: black;
 }
+.tag-header-img-22 .toggle-sidebar {
+    margin-bottom: 8%;
+}
 .toggle-sidebar .menu-icon-text {
     font-size: .3em;
 
@@ -939,10 +951,19 @@ input:-ms-input-placeholder {
 a.sidebar-title {
     color: #fff;
 }
-
-
-
-
+.logos-shortcode-container img {
+  height: 4vw;
+  padding: 3%;
+}
+.logos-shortcode-container {
+  text-align: center;
+}
+.tag-header-img-31 img {
+  margin-bottom: -1%;
+}
+.tag-header-img-28 img {
+  margin-bottom: -1%;
+}
 
 
 
@@ -1161,4 +1182,8 @@ a.sidebar-title {
 
 .page .wrapper p {
     padding-bottom: 1em;
+}
+
+.tag-header-img-22 img {
+    margin-bottom: -7%;
 }

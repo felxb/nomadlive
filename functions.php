@@ -299,10 +299,33 @@ function my_wpcf7_ajax_loader () {
 }
 
 
+//Custom Ajax Call
+add_action( 'wp_ajax_nopriv_my_action', 'nomadlive_ajax_lang_callback' );
+function nomadlive_ajax_lang_callback() {
+    global $wpdb;
+    if($_POST['langlist']){
+        $languages = icl_get_languages('skip_missing=1');
+        if(1 < count($languages)){
+            foreach($languages as $l){
+              if(!$l['active']) $langs[] = '<li class="icl-'.$l['url'].'"><a href="'.$l['url'].'">'.$l['translated_name'].' class="'.(($l['active']==1)?"lang_sel_sel":"lang_sel_other").'"</a></li>';
+            }
+            echo join(', ', $langs);
+        }
+    }
+    wp_die();
+}
+
+
 
 //Custom Shortcodes
 add_filter('widget_text', 'do_shortcode'); 
-function channel_logos( $atts ) {
+
+function nomadlive_home_url( $atts ) {
+    return icl_get_home_url();
+}
+add_shortcode( 'home_url', 'nomadlive_home_url' );
+
+function nomadlive_channel_logos( $atts ) {
     $logos="";
     $taxonomies = array( 
         'post_tag',
@@ -313,7 +336,8 @@ function channel_logos( $atts ) {
         'order'             => 'ASC',
     ); 
 
-    $terms = get_terms($taxonomies, $args);        
+    $terms = get_terms($taxonomies, $args); 
+    $logos.= "<div class='logos-shortcode-container'>";       
     foreach($terms as $term){
         
         if(get_field('display_channel_on_homepage', "post_tag_".$term->term_id)){
@@ -331,9 +355,10 @@ function channel_logos( $atts ) {
             }
         }
     }
+    $logos.='</div>';
     return $logos;
 }
-add_shortcode( 'channel_logos', 'channel_logos' );
+add_shortcode( 'channel_logos', 'nomadlive_channel_logos' );
 
 
 

@@ -17,8 +17,8 @@
 		<!-- /ticker -->
 
 		<!-- logos -->
-        <div class="logos-container">
-			<?php echo do_shortcode("channel_logos");?>
+        <div class="logos-home-container">
+			<?php echo do_shortcode("[channel_logos]");?>
 		</div>
 		<!-- /logos -->
 

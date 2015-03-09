@@ -1,16 +1,17 @@
 <?php if (is_category()) { ?>
+		<?php $queried_object = get_queried_object(); ?>
+		<?php $taxonomy = $queried_object->taxonomy;?>
+		<?php $term_id = $queried_object->term_id;?>  
+
 		<div id="category-header-title" class="header-title">
 		
-        	<div id="category-header-img" class="header-img non-selectable">
+        	<div id="category-header-img" class="header-img non-selectable category-header-img-<?php echo $term_id;?>">
 
 	    	    <div class="toggle-sidebar sf-rollback non-selectable">
 	    	    	<i class="fa fa-bars"></i>
 	    	    	<span class="menu-icon-text">menu</span>
 	    	    </div>	
 
-				<?php $queried_object = get_queried_object(); ?>
-				<?php $taxonomy = $queried_object->taxonomy;?>
-				<?php $term_id = $queried_object->term_id;?>  
 				<?php $imgHeader = get_field('story_header', $queried_object);?>
 
 			    <?php if( $imgHeader ){?>
@@ -52,21 +53,21 @@
         </div>
 
 <?php } else if (is_tag()) { ?>
+		<?php $queried_object = get_queried_object(); ?>
+		<?php $taxonomy = $queried_object->taxonomy;?>
+		<?php $term_id = $queried_object->term_id;?>  
+
 		<div id="tag-header-title" class="header-title">
 
-        	<div id="tag-header-img" class="header-img non-selectable">
+        	<div id="tag-header-img" class="header-img non-selectable tag-header-img-<?php echo $term_id;?>">
 
 	    	    <div class="toggle-sidebar sf-rollback non-selectable">
 	    	   		<i class="fa fa-bars"></i>
 	    	    	<span class="menu-icon-text">menu</span>
 	    	    </div>	
-				<?php $queried_object = get_queried_object(); ?>
-				<?php $taxonomy = $queried_object->taxonomy;?>
-				<?php $term_id = $queried_object->term_id;?>  
 				<?php $imgHeader = get_field('channel_logo', $queried_object);?>
 				<?php if ( get_field('channel_header', $queried_object) ) : $imgHeader = get_field('channel_header', $queried_object); ?>
 				<?php endif;?>
-
 			    <?php if( $imgHeader ):?>
         		<?php $url = wp_get_attachment_image_src( $imgHeader, 'large' );?>
         		<?php $url = $url['0']; ?>
@@ -85,8 +86,26 @@
 					
 	            </div>
 	            </div>   
-	            <div id="social-links-menu" class="header-menu">
-					<?php get_template_part('social'); ?>
+	            <div id="stories-links-menu" class="header-menu">
+	            	<ul>
+					<?php $stories="";
+				    $taxonomies = array( 
+				        'category',
+				    );
+
+				    $args = array(
+				        'orderby'           => 'name', 
+				        'order'             => 'ASC',
+				    ); 
+
+				    $stories = get_terms($taxonomies, $args); 
+				    foreach($stories as $story){
+				        $channelsArray = get_field('logos_story', "category_".$story->term_id);
+				        if (in_array($term_id,$channelsArray)){
+				        	echo "<li class='story-".$story->term_id."'><a href='".get_term_link($story)."'>".$story->name."</a></li>";
+				        }
+				    }?>
+				    </ul>
 	            </div>
 	        </div>
 <?php } else if (is_search()||is_404()) { ?>
@@ -109,15 +128,16 @@
 <?php } else if (is_single()) { ?>
 					
         	    <?php if (isset($_REQUEST["story"])) { ?>
+					<?php $queried_object = get_term_by('slug', $_REQUEST["story"], 'category');?>
+					<?php $taxonomy = $queried_object->taxonomy;?>
+					<?php $term_id = $queried_object->term_id;?>  
+
 	        	    <div id="category-header-title" class="header-title">
-			        	<div id="category-header-img" class="header-img non-selectable">
+			        	<div id="category-header-img" class="header-img non-selectable cat-header-img-<?php echo $term_id;?>">
 			        	    <div class="toggle-sidebar sf-rollback non-selectable">
 			        	    	<i class="fa fa-bars"></i>
 			        	    	<span class="menu-icon-text">menu</span>
 			        	    </div>
-							<?php $queried_object = get_term_by('slug', $_REQUEST["story"], 'category');?>
-							<?php $taxonomy = $queried_object->taxonomy;?>
-							<?php $term_id = $queried_object->term_id;?>  
 							<?php $imgHeader = get_field('story_header', $queried_object);?>
 
 						    <?php if( $imgHeader ){?>
@@ -161,15 +181,16 @@
 
 
         	    <?php } else if ($_REQUEST["channel"]) { ?>
+						<?php $queried_object = get_term_by('slug', $_REQUEST["channel"], 'post_tag');?>
+						<?php $taxonomy = $queried_object->taxonomy;?>
+						<?php $term_id = $queried_object->term_id;?>  
+
 	        	    <div id="tag-header-title" class="header-title">
-			        	<div id="search-header-img" class="header-img non-selectable">
+			        	<div id="search-header-img" class="header-img non-selectable tag-header-img-<?php echo $term_id;?>">
 			        	    <div class="toggle-sidebar sf-rollback non-selectable">
 			        	    	<i class="fa fa-bars"></i>
 			        	    	<span class="menu-icon-text">menu</span>
 			        	    </div>
-						<?php $queried_object = get_term_by('slug', $_REQUEST["channel"], 'category');?>
-						<?php $taxonomy = $queried_object->taxonomy;?>
-						<?php $term_id = $queried_object->term_id;?>  
 						<?php $imgHeader = get_field('channel_logo', $queried_object);?>
 						<?php if ( get_field('channel_header', $queried_object) ) : $imgHeader = get_field('channel_header', $queried_object); ?>
 						<?php endif;?>

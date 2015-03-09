@@ -48,6 +48,7 @@ jQuery(document).ready(function(){
 	  var state = event.state;
 	  	window.location.href = state.link;
 	});
+
 	jQuery(".thumb a").click(function(e){
 		if(jQuery(".main-player").length){
 			e.preventDefault();
@@ -87,7 +88,18 @@ jQuery(document).ready(function(){
 			});
 		}
     });
-
+	if (jQuery("#main-player")){
+		if (jQuery("#main-player").hasClass("vimeo-player")){
+			id = jQuery("#main-player iframe").attr("id");
+			idInt = id.replace("vimeo","");
+			jQuery("#thumb"+idInt+" a").addClass("currently-playing");
+			$f(id).addEvent('ready', function(id){
+				$f(id).addEvent('finish', function(){
+					closeFullScreenAndNext();
+				});
+		    });
+		}
+	}
 	// if(jQuery("html").attr("lang")=="fr-FR"){
 	// 	jQuery(".mtphr-dnt-twitter-time").each(function() {
 	//        tweetTime=jQuery(this).html();
