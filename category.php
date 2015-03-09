@@ -12,6 +12,7 @@
 
 		<!-- ticker -->
         <div id="ticker-container">
+	        <?php $queried_object = get_queried_object(); ?>
 			<?php $tickerID = get_field('twitter_ticker_story', $queried_object);?>
 		    <?php if( $tickerID ){?>
 				<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker($tickerID->ID);} ?>

@@ -267,7 +267,15 @@ function nomadlive_change_tag_base( $value ) {
    return 'channel';
 
 }
+//multilingual search
+// add_action( 'pre_get_posts', 'nomadlive_multilingual_site' );
 
+// function nomadlive_multilingual_site($query)
+// {
+// if ( $query->is_search() || $query->is_archive() || $query->is_category() || $query->is_tag() ) {
+//         $query->set( 'suppress_filters', true );
+//     }
+// }
 
 // Pagination
 add_action('init', 'nomadlive_pagination');
@@ -280,13 +288,52 @@ function nomadlive_pagination()
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
         'total' => $wp_query->max_num_pages
+
     ));
 }
 
-/*change contact form spinner*/
+//change contact form spinner
 add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
 function my_wpcf7_ajax_loader () {
     return  get_bloginfo('stylesheet_directory') . '/inc/img/ajax-loader.gif';
 }
+
+
+
+//Custom Shortcodes
+add_filter('widget_text', 'do_shortcode'); 
+function channel_logos( $atts ) {
+    $logos="";
+    $taxonomies = array( 
+        'post_tag',
+    );
+
+    $args = array(
+        'orderby'           => 'name', 
+        'order'             => 'ASC',
+    ); 
+
+    $terms = get_terms($taxonomies, $args);        
+    foreach($terms as $term){
+        
+        if(get_field('display_channel_on_homepage', "post_tag_".$term->term_id)){
+
+            if(get_field('channel_logo',"post_tag_".$term->term_id)){
+                $imgID=get_field('channel_logo',"post_tag_".$term->term_id);
+                $url = wp_get_attachment_image_src( $imgID, 'large' ); 
+                $url = $url['0']; 
+                $channelLink= get_field('channel_external_link',"post_tag_".$term->term_id);
+                $target=($channelLink?"_blank":"_self");
+                $channelLink = ($channelLink?$channelLink:get_bloginfo('url')."/channel/".$term->slug);
+                $logos.= '<a href="'.$channelLink.'" target="'.$target.'">';
+                $logos.= '<img class="logo-img" title="'.$term->name.'" id="logo-'.$term->slug.'" src="'.$url.'"/>';
+                $logos.= '</a>';
+            }
+        }
+    }
+    return $logos;
+}
+add_shortcode( 'channel_logos', 'channel_logos' );
+
 
 

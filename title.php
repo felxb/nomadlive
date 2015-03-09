@@ -26,9 +26,9 @@
 		        <?php }?>
 	            <div class="project-description show-desc-onHover">
 		            <?php $description=category_description();?>
-		            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
-					<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
-					</p>
+		            <p><?php echo ($description?$description:bloginfo('description'));?>
+					<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					
 	            </div>
             </div>   
             <div id="logos" class="header-menu">
@@ -80,9 +80,9 @@
 		        <?php endif; ?>
 	            <div class="project-description show-desc-onHover">
 		            <?php $description=tag_description();?>
-		            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
-					<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
-					</p>
+		            <p><?php echo ($description?$description:bloginfo('description'));?>
+					<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					
 	            </div>
 	            </div>   
 	            <div id="social-links-menu" class="header-menu">
@@ -133,9 +133,9 @@
 					        <?php }?>
 				            <div class="project-description show-desc-onHover">
 					            <?php $description=category_description();?>
-					            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
-								<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
-								</p>
+					            <p><?php echo ($description?$description:bloginfo('description'));?>
+								<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					
 				            </div>
 			            </div>   
 			            <div id="logos" class="header-menu">
@@ -187,9 +187,9 @@
 				        <?php endif; ?>
 			            <div class="project-description show-desc-onHover">
 				            <?php $description=tag_description();?>
-				            <p><?php echo ($description?$description:bloginfo('description'));?><br/>
-							<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?>
-							</p>
+				            <p><?php echo ($description?$description:bloginfo('description'));?>
+							<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					
 			            </div>
 			            </div>   
 			            <div id="social-links-menu" class="header-menu">

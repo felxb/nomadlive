@@ -88,14 +88,16 @@ jQuery(document).ready(function(){
 		}
     });
 
-	if(jQuery("html").attr("lang")=="fr-FR"){
-		jQuery(".mtphr-dnt-twitter-time").each(function() {
-	       tweetTime=jQuery(this).html();
-			tweetTime=tweetTime.replace("hour","heure");
-			tweetTime=tweetTime.replace("hours","heures");
-			jQuery(this).html(tweetTime);
-	    });
-	}
+	// if(jQuery("html").attr("lang")=="fr-FR"){
+	// 	jQuery(".mtphr-dnt-twitter-time").each(function() {
+	//        tweetTime=jQuery(this).html();
+	// 		tweetTime=tweetTime.replace("hour","heure");
+	// 		tweetTime=tweetTime.replace("hours","heures");
+	// 		tweetTime=tweetTime.replace("day","jour");
+	// 		tweetTime=tweetTime.replace("days","jours");
+	// 		jQuery(this).html(tweetTime);
+	//     });
+	// }
 	
 	jQuery(".thumbSubmit").click(function(e){
 		e.preventDefault();

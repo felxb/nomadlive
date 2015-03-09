@@ -16,6 +16,12 @@
 		</div>
 		<!-- /ticker -->
 
+		<!-- logos -->
+        <div class="logos-container">
+			<?php echo do_shortcode("channel_logos");?>
+		</div>
+		<!-- /logos -->
+
 		<!-- section -->
 		<section>
 			<!-- gallery -->

@@ -3,17 +3,18 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "/Applications/wordpress-4.1.1-0/apps/wordpress/htdocs/wp-content/themes"
+			"path": "/Applications/wordpress-4.1.1-0/apps/wordpress/htdocs/wp-content/plugins"
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/Applications/wordpress-4.1.1-0/apps/wordpress/htdocs/wp-content/plugins"
-		},
+			"path": "."
+		}
 	],
-	"settings": {
-		"xdebug": {
-			"url": "http://127.0.0.1:8080/wordpress/",
-	    }
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://127.0.0.1:8080/wordpress/"
+		}
 	}
-
 }
