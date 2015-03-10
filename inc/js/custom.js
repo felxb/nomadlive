@@ -67,20 +67,21 @@ jQuery(document).ready(function(){
 			jQuery(this).addClass("currently-playing");
 			currentTitle=jQuery(".currently-playing .video-title").text();
 
-			 // var data = {
-		  //        action: 'nomadlive_ajax_lang',
-		  //        security: wp_ajax.ajaxnonce
-		  //    };
-	   //      jQuery.post( 
-	   //          wp_ajax.ajaxurl, 
-	   //          data,                   
-	   //          function( response ){
-	   //              if( response.success )
-	   //              {
-	   //                  $( '#lang_sel_list' ).html( response.data );
-	   //              }
-	   //          }
-	   //      ); 
+			var data = {
+			'action' : 'nomadlive_refresh_lang',
+			'nonce' : jQuery("#thumbs-container").attr("data-nonce"),
+			'videoID' : jQuery(this).attr("data-post-id")
+			};
+
+	        jQuery.post( 
+	            nomadliveAjax.ajaxurl, 
+	            data,                   
+	            function(response){
+	            	if(response){
+	                    jQuery( '#lang_sel_list' ).html( response );
+	                }
+	            }
+	        ); 
 
 			ga('send', 'event', 'button', 'play', currentTitle );
 			content=jQuery(this).attr("data-content");

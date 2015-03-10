@@ -30,11 +30,6 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta name="twitter:widgets:csp" content="on"> 
 
-		<?php wp_enqueue_script("jquery");?>
-		<?php wp_enqueue_script("froogaloop2","//f.vimeocdn.com/js/froogaloop2.min.js");?>
-		<?php wp_enqueue_script("modernizr",get_template_directory_uri()."/inc/js/modernizr.min.js");?>
-		<?php wp_enqueue_script("nomadlive_custom",get_template_directory_uri()."/inc/js/custom.js");?>
-
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/style.css">
 
