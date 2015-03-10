@@ -66,6 +66,22 @@ jQuery(document).ready(function(){
 			jQuery(".thumb a").each(function(){jQuery(this).removeClass("currently-playing");});
 			jQuery(this).addClass("currently-playing");
 			currentTitle=jQuery(".currently-playing .video-title").text();
+
+			 // var data = {
+		  //        action: 'nomadlive_ajax_lang',
+		  //        security: wp_ajax.ajaxnonce
+		  //    };
+	   //      jQuery.post( 
+	   //          wp_ajax.ajaxurl, 
+	   //          data,                   
+	   //          function( response ){
+	   //              if( response.success )
+	   //              {
+	   //                  $( '#lang_sel_list' ).html( response.data );
+	   //              }
+	   //          }
+	   //      ); 
+
 			ga('send', 'event', 'button', 'play', currentTitle );
 			content=jQuery(this).attr("data-content");
 			type=jQuery(this).attr("data-type");
@@ -128,17 +144,8 @@ jQuery(document).ready(function(){
 			jQuery(".form-overlay").hide();
 		}
 	});
-	jQuery('.thumb').click(function() {  
-	});
 	if (!Modernizr.touch){
-	jQuery(".thumb a").hover(
-		function() {
-			jQuery(this).children(".video-title-container").show();
-		}, 
-		function() {
-			jQuery(this).children(".video-title-container").hide();
-		}
-	);
+	
 	if(jQuery(".show-desc-onHover")){
 		jQuery(".header-img").mouseenter(function(){
 			clearTimeout(jQuery(this).data('timeoutId'));
@@ -152,6 +159,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	} else {
+		jQuery("body").addClass('touchDevice');
 		jQuery(".video-title-container").show();
 	}
 });

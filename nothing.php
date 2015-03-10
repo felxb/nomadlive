@@ -6,9 +6,8 @@
 		    </div>
 
 		    <?php $temp_query = $wp_query; ?>
-			<?php query_posts($args); ?>
+			<?php query_posts(); ?>
 			<?php get_template_part('loop'); ?>
-			<?php get_template_part('pagination'); ?>
 			<?php $wp_query = $temp_query; ?>
 
 			<!-- /nothing -->

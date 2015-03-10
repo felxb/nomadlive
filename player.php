@@ -1,4 +1,25 @@
-<?php if (is_category()) { ?>
+<?php if (is_search()||is_single()) { ?>
+			<?php $i=1;?>
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            		<?php if ($i==1) {?>
+		            	<?php if( get_field("video_type",$post->ID)): ?>
+		            		<div class="player-container">
+				            	<?php $video_type=get_field("video_type",$post->ID);?>
+				            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
+							    <?php if($video_type=="vimeo") {?>    
+					            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id",$post->ID); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					            <?php } else if ($video_type=="youtube") { ?>
+									<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
+								<?php } ?>	
+								</div>
+							</div>
+		            	<?php endif;?>
+						<?php $i++;?>
+					<?php } ?>
+            <?php endwhile; ?>
+			<?php endif; ?>	
+
+<?php } else if (is_category()) { ?>
     <?php $queried_object = get_queried_object(); ?>
     <?php $taxonomy = $queried_object->taxonomy;?>
     <?php $term_id = $queried_object->term_id;?>  
@@ -65,27 +86,6 @@
             <?php endif; ?>	
         <?php } ?>	
 	</div>
-<?php } else if (is_search()||is_single()) { ?>
-			<?php $i=1;?>
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-            		<?php if ($i==1) {?>
-		            	<?php if( get_field( "video_type") ): ?>
-		            		<div class="player-container">
-				            	<?php $video_type=get_field("video_type");?>
-				            	<div id="main-player" class="main-player <?php echo $video_type;?>-player">
-							    <?php if($video_type=="vimeo") {?>    
-					            	<iframe id='vimeo<?php echo $i;?>' src='//player.vimeo.com/video/<?php echo get_field("vimeo_id"); ?>?autoplay=1&color=BF942F&badge=0&byline=0&title=0&portrait=0&api=1&player_id=vimeo<?php echo $i;?>' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					            <?php } else if ($video_type=="youtube") { ?>
-									<iframe width="560" id="youtube<?php echo $i;?>" height="315" src="https://www.youtube.com/embed/<?php echo get_field("vimeo_id"); ?>" frameborder="0" allowfullscreen></iframe>		            
-								<?php } ?>	
-								</div>
-							</div>
-		            	<?php endif;?>
-						<?php $i++;?>
-					<?php } ?>
-            <?php endwhile; ?>
-			<?php endif; ?>	
-
 <?php } else if (is_404()){ ?>
 
 <?php } else { ?>

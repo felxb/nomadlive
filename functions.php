@@ -299,23 +299,37 @@ function my_wpcf7_ajax_loader () {
 }
 
 
-//Custom Ajax Call
-add_action( 'wp_ajax_nopriv_my_action', 'nomadlive_ajax_lang_callback' );
-function nomadlive_ajax_lang_callback() {
-    global $wpdb;
-    if($_POST['langlist']){
-        $languages = icl_get_languages('skip_missing=1');
-        if(1 < count($languages)){
-            foreach($languages as $l){
-              if(!$l['active']) $langs[] = '<li class="icl-'.$l['url'].'"><a href="'.$l['url'].'">'.$l['translated_name'].' class="'.(($l['active']==1)?"lang_sel_sel":"lang_sel_other").'"</a></li>';
-            }
-            echo join(', ', $langs);
-        }
-    }
-    wp_die();
+// Custom Ajax Call
+// add_action( 'wp_ajax_nopriv_my_action', 'nomadlive_ajax_lang_callback' );
+// function nomadlive_ajax_lang_callback() {
+//     global $wpdb;
+//      if ( !wp_verify_nonce( $_REQUEST['nonce'], "my_user_vote_nonce")) {
+//       exit("No naughty business please");
+//    }      
+//     if($_REQUEST['langlist']){
+//         $languages = icl_get_languages('skip_missing=1');
+//         if(1 < count($languages)){
+//             foreach($languages as $l){
+//               if(!$l['active']) $langs[] = '<li class="icl-'.$l['url'].'"><a href="'.$l['url'].'">'.$l['translated_name'].' class="'.(($l['active']==1)?"lang_sel_sel":"lang_sel_other").'"</a></li>';
+//             }
+//             echo join('', $langs);
+//         }
+//     }
+
+
+
+//    die();
+
+// }
+//search only posts
+function SearchFilter($query) {
+if ($query->is_search) {
+$query->set('post_type', 'post');
+}
+return $query;
 }
 
-
+add_filter('pre_get_posts','SearchFilter');
 
 //Custom Shortcodes
 add_filter('widget_text', 'do_shortcode'); 
