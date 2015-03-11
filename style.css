@@ -242,9 +242,10 @@ body {
 }
 
 .header-menu img {
-    display: inline-block;
     height: 4vw;
     margin-right: 0;
+    margin-left:3%;
+    display:inline-block;
 }
 #stories-links-menu {
   text-transform: uppercase;
@@ -345,14 +346,16 @@ body {
     position: absolute;
     z-index: 90000;
 
-    display: none;
+    display: block;
     width: 52%;
-    margin-top: 1.7%;
+    margin-top: 1%;
 
     text-align: left;
 
     background: rgba(0, 0, 0, 0.7);
     text-shadow: 0px 0px 4em #000;
+    top: 100%;
+    cursor: inherit;
 }
 #weather {
     background: #eee;
@@ -382,6 +385,8 @@ body {
       -ms-transform: translate3d(0,0,0)!important;
       transform: translate3d(0,0,0)!important;
   z-index: 3000001;
+  top: 0;
+  left: 0;
 }
 .form-overlay-container {
     position: absolute;
@@ -560,7 +565,8 @@ span.wpcf7-not-valid-tip {
 }
 
 .header-title {
-    padding: 1%;
+    padding: 2% 1%;
+    position: relative;
 }
 #nomad-header-img img {
     margin-bottom: -2%;
@@ -612,22 +618,32 @@ span.wpcf7-not-valid-tip {
 .toggle-sidebar {
     display: inline-block;
     width: 4%;
-    padding: 1% 1% 1% 0;
+    padding: 1% 1% 0% 0;
 
     font-size: 180%;
     line-height: 0;
 
     cursor: pointer;
 
-    background-color: black;
-}
-.tag-header-img-22 .toggle-sidebar {
-    margin-bottom: 8%;
+    background-color: transparent;
+    z-index: 11;
+    position: relative;
 }
 .toggle-sidebar .menu-icon-text {
     font-size: .3em;
 
     text-transform: uppercase;
+}
+.cover-header-title{padding:0;}
+
+.cover-header-title #logos{
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  padding: 2% 1%;
+  background: rgba(0,0,0,0.4);
+  width: 100%;
+  bottom: 0%;
 }
 .awesome-weather-header {
     display: none!important;
@@ -923,7 +939,7 @@ input:-ms-input-placeholder {
     background: #ffffff;
   }
 .page {
-  padding: 1%;
+  padding: 4%;
 }
 
 .page p:last-child{
@@ -945,7 +961,7 @@ input:-ms-input-placeholder {
 .widget:nth-child(2) {
   margin: 2.5em 0;
 }
-.widget:nth-child(5) h1 {
+.widget:nth-child(4) h1 {
   display:none;
 }
 
@@ -973,12 +989,6 @@ a.sidebar-title {
 .logos-shortcode-container {
   text-align: center;
 }
-.tag-header-img-31 img {
-  margin-bottom: -1%;
-}
-.tag-header-img-28 img {
-  margin-bottom: -1%;
-}
 
 #infscr-loading img {padding:2em;}
 
@@ -988,6 +998,51 @@ a.sidebar-title {
 .touchDevice .video-title-container {
   display: block;
 }
+
+
+.page .wrapper p {
+    padding-bottom: 1em;
+}
+
+.sf-nav .thumbSubmit {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1em;
+  border: 1px solid #FFF;
+  width: auto;
+  display: inline-block;
+  border-radius: 1em;
+  cursor:pointer;
+  margin:1em 0;
+}
+.sf-nav .thumbSubmit:hover {
+  background:#fff;
+  color:#000;
+}
+   section .page {
+      font-size: 3em;
+    }
+
+#lang_sel_list {
+  margin-top: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1065,6 +1120,9 @@ a.sidebar-title {
     }
     .video-title-container {
         font-size: .6em;
+    }
+    .social-links a {
+      padding: 0 4px;
     }
 }
 
@@ -1152,6 +1210,10 @@ a.sidebar-title {
     .logos-shortcode-container {
       padding: 1em 0;
     }
+    section .page {
+      font-size: 2em;
+      text-align: center;
+    }
 }
 @media only screen and (max-width: 400px) {
     #logos img {
@@ -1216,29 +1278,42 @@ a.sidebar-title {
     }
 }
 
-
-.page .wrapper p {
-    padding-bottom: 1em;
+.cover-header-title .toggle-sidebar img {
+    margin: 0;
+    padding: 7px;
+    background: #000;
+    text-align: center;
+    z-index: 12;
+    position: relative;
 }
-
-.tag-header-img-22 img {
-    margin-bottom: -7%;
+.cover-header-title .toggle-sidebar{
+  position: absolute;
 }
-
-.sf-nav .thumbSubmit {
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.8em;
-  padding: 1em;
-  border: 1px solid #FFF;
-  width: auto;
-  display: inline-block;
-  border-radius: 1em;
-  cursor:pointer;
-  margin:1em 0;
+#category-header-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 65%;
+    height: auto;
+    max-width: none;
+    max-height: 300px;
 }
-.sf-nav .thumbSubmit:hover {
-  background:#fff;
-  color:#000;
+#category-header-img {
+  width: 100%;
+max-height: none;
+
+}
+.cover-header-title .category-header-img {
+  max-width: 100%;
+  max-height: none;
+  width: 100%;
+  height: auto;
+}
+.cover-header-title .toggle-sidebar img {
+  position: absolute;
+}
+.cover-header-title .header-menu img {
+  height: 5vw;
+  margin-left: 5%;
 }

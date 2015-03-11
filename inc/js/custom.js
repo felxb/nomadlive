@@ -105,7 +105,7 @@ jQuery(document).ready(function(){
 			});
 		}
     });
-	if (jQuery("#main-player")){
+	if (jQuery("#main-player").length>0){
 		if (jQuery("#main-player").hasClass("vimeo-player")){
 			id = jQuery("#main-player iframe").attr("id");
 			idInt = id.replace("vimeo","");
@@ -117,6 +117,19 @@ jQuery(document).ready(function(){
 		    });
 		}
 	}
+	// function resizeCoverHeader(){
+	// 	jQuery('.header-img').css('height',jQuery('.header-title .Cover').height());
+	// 	jQuery('.header-title').css('height',jQuery('.header-title .Cover').height());
+	// 	console.log("resized");
+	// }
+	// if(jQuery(".cover-header-title").length>0){
+	// 	resizeCoverHeader();
+	// 	jQuery(".header-title .Cover").resize(resizeCoverHeader);		
+	// }
+	if(jQuery(".thumb").length==1&&jQuery("#thumb0").length===0){
+		jQuery('#gallery').hide();
+	}
+
 	// if(jQuery("html").attr("lang")=="fr-FR"){
 	// 	jQuery(".mtphr-dnt-twitter-time").each(function() {
 	//        tweetTime=jQuery(this).html();
