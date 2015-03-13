@@ -130,6 +130,10 @@ jQuery(document).ready(function(){
 		jQuery('#gallery').hide();
 	}
 
+
+	jQuery(".project-description-close").click(function(){
+		jQuery(".show-desc-onHover").hide();
+	});
 	// if(jQuery("html").attr("lang")=="fr-FR"){
 	// 	jQuery(".mtphr-dnt-twitter-time").each(function() {
 	//        tweetTime=jQuery(this).html();
@@ -143,6 +147,9 @@ jQuery(document).ready(function(){
 	
 	jQuery(".thumbSubmit").click(function(e){
 		e.preventDefault();
+		jQuery('html, body').animate({
+			scrollTop: jQuery("html").offset().top
+		}, 300);
 		jQuery(".form-overlay").show();
 	});
 	jQuery(".form-quit").click(function(e){

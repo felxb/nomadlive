@@ -328,7 +328,6 @@ function nomadlive_refresh_lang_callback() {
     wp_die();
  }
 
-
 //search only posts
 function SearchFilter($query) {
 if ($query->is_search) {
@@ -340,7 +339,28 @@ return $query;
 add_filter('pre_get_posts','SearchFilter');
 
 //Custom Shortcodes
-add_filter('widget_text', 'do_shortcode'); 
+function nomadlive_stories( $atts ) {
+    $stories = get_categories();
+    $storiesString = "<ul class='section story-list'>";
+    foreach ($stories as $story) {
+        $firstPostInCat = new WP_Query('cat='.$story->term_id.'&showposts=1');
+        while ($firstPostInCat->have_posts()) : $firstPostInCat->the_post();
+             $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'videoThumb' );
+             $thumbnailUrl = $thumb['0']; 
+        endwhile;
+        $storiesString .= "<li class='span_1_of_4 col non-selectable'>";
+        $storiesString .= "<a href='".icl_get_home_url().get_option("category_base")."/".$story->slug."'>";
+        $storiesString .= "<img src='".$thumbnailUrl."'/>";
+        $storiesString .= "<div class='story-title'>";
+        $storiesString .= $story->name;
+        $storiesString .= "</div>";
+        $storiesString .= "</a>";
+        $storiesString .= "</li>";
+    }
+    $storiesString .= "</ul>";
+    return $storiesString;
+}
+add_shortcode( 'nomadlive_stories', 'nomadlive_stories' );
 
 function nomadlive_home_url( $atts ) {
     return icl_get_home_url();

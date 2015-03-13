@@ -16,38 +16,41 @@
 			    <?php if( $imgHeader ){?>
         		<?php $url = wp_get_attachment_image_src( $imgHeader, 'large' );?>
         		<?php $url = $url['0']; ?>
-	            <img class="category-header-img <?php echo $headerType;?>" title="<?php single_cat_title(); ?>" src="<?php echo $url;?>"/>
+	            <img class="main-header-img <?php echo $headerType;?>" title="<?php single_cat_title(); ?>" src="<?php echo $url;?>"/>
 		        <?php } else {?>
 				<div class="query-title">
 					<span class="query"><?php single_cat_title(); ?></span>
 					<?php echo "<span class='nomad-x'>x</span>";?>
-		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+		            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 	            </div>
 		        <?php }?>
 	            <div class="project-description show-desc-onHover">
+	            	<div class="project-description-close"><i class="fa fa-close"></i></div>
 		            <?php $description=category_description();?>
 		            <p><?php echo ($description?$description:bloginfo('description'));?>
-					<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					<p><?php echo __('NOMAD is a 24/7 livecast. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
 					
 	            </div>
             </div>   
             <div id="logos" class="header-menu">
-				<?php $logosArray = get_field('logos_story', $queried_object);?>
-			    <?php if( $logosArray ){?>
-					<?php foreach ($logosArray as $key => $logo){ ?>
-						<?php $imgID= get_field('channel_logo',"post_tag_".$logo);?>
-						<?php if ($imgID) { ?>
-						<?php $url = wp_get_attachment_image_src( $imgID, 'large' ); ?>
-						<?php $url = $url['0']; ?>
-						<?php $channelLink= get_field('channel_external_link',"post_tag_".$logo);?>
-						<?php $target=($channelLink?"_blank":"_self");?>
-						<?php $channelLink = ($channelLink?$channelLink:get_bloginfo('url')."/channel/".get_tag($logo)->slug);?>
-							<a href="<?php echo $channelLink;?>" target="<?php echo $target;?>">
-					            <img class="logo-img" title="<?php echo get_tag($logo)->name; ?>" id="logo-<?php echo get_tag($logo)->slug; ?>" src="<?php echo $url;?>"/>
-				            </a>
+	            <div class="logos-container">
+					<?php $logosArray = get_field('logos_story', $queried_object);?>
+				    <?php if( $logosArray ){?>
+						<?php foreach ($logosArray as $key => $logo){ ?>
+							<?php $imgID= get_field('channel_logo',"post_tag_".$logo);?>
+							<?php if ($imgID) { ?>
+							<?php $url = wp_get_attachment_image_src( $imgID, 'large' ); ?>
+							<?php $url = $url['0']; ?>
+							<?php $channelLink= get_field('channel_external_link',"post_tag_".$logo);?>
+							<?php $target=($channelLink?"_blank":"_self");?>
+							<?php $channelLink = ($channelLink?$channelLink:get_bloginfo('url')."/channel/".get_tag($logo)->slug);?>
+								<a href="<?php echo $channelLink;?>" target="<?php echo $target;?>">
+						            <img class="logo-img" title="<?php echo get_tag($logo)->name; ?>" id="logo-<?php echo get_tag($logo)->slug; ?>" src="<?php echo $url;?>"/>
+					            </a>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				<?php } else { get_template_part('social');} ?>
+					<?php } else { get_template_part('social');} ?>
+	            </div>
             </div>
         </div>
 
@@ -69,18 +72,19 @@
 			    <?php if( $imgHeader ):?>
         		<?php $url = wp_get_attachment_image_src( $imgHeader, 'large' );?>
         		<?php $url = $url['0']; ?>
-	            <img class="tag-header-img <?php echo $headerType;?>" title="<?php single_tag_title(); ?>" src="<?php echo $url;?>"/>
+	            <img class="main-header-img <?php echo $headerType;?>" title="<?php single_tag_title(); ?>" src="<?php echo $url;?>"/>
 		        <?php else:?>
 				<div class="query-title">
 					<span class="query"><?php single_tag_title(); ?></span>
 					<?php echo "<span class='nomad-x'>x</span>";?>
-		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+		            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 		        </div>
 		        <?php endif; ?>
 	            <div class="project-description show-desc-onHover">
+	            	<div class="project-description-close"><i class="fa fa-close"></i></div>
 		            <?php $description=tag_description();?>
 		            <p><?php echo ($description?$description:bloginfo('description'));?>
-					<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+					<p><?php echo __('NOMAD is a 24/7 livecast. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
 					
 	            </div>
             </div>   
@@ -118,7 +122,7 @@
 	            <div class="query-title">
 					<span class="query"><?php echo get_search_query(); ?></span>
 					<?php echo "<span class='nomad-x'>x</span>";?>
-		            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+		            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 	            </div>
             </div>   
             <div id="social-links-menu" class="header-menu">
@@ -132,7 +136,7 @@
 					<?php $taxonomy = $queried_object->taxonomy;?>
 					<?php $term_id = $queried_object->term_id;?>  
 				    <?php $headerType = get_field('story_header_type', $queried_object);?>
-	        	    <div id="category-header-title" class="header-title">
+	        	    <div id="category-header-title" class="header-title <?php echo strtolower($headerType);?>-header-title">
 			        	<div id="category-header-img" class="header-img cat-header-img-<?php echo $term_id;?>">
 			        	    <div class="toggle-sidebar sf-rollback non-selectable">
 				    	    	<img src="<?php echo get_template_directory_uri();?>/inc/img/menu-button-nomad.jpg"/>
@@ -142,38 +146,41 @@
 						    <?php if( $imgHeader ){?>
 			        		<?php $url = wp_get_attachment_image_src( $imgHeader, 'large' );?>
 			        		<?php $url = $url['0']; ?>
-				            <img class="category-header-img" title="<?php echo $queried_object->name; ?>" src="<?php echo $url;?>"/>
+				            <img class="main-header-img <?php echo $headerType;?>" title="<?php echo $queried_object->name; ?>" src="<?php echo $url;?>"/>
 					        <?php } else {?>
 							<div class="query-title">
 								<span class="query"><?php echo $queried_object->name; ?></span>
 								<?php echo "<span class='nomad-x'>x</span>";?>
-					            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+					            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
 				            </div>
 					        <?php }?>
 				            <div class="project-description show-desc-onHover">
+				            	<div class="project-description-close"><i class="fa fa-close"></i></div>
 					            <?php $description=category_description();?>
 					            <p><?php echo ($description?$description:bloginfo('description'));?>
-								<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+								<p><?php echo __('NOMAD is a 24/7 livecast. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
 					
 				            </div>
 			            </div>   
 			            <div id="logos" class="header-menu">
-							<?php $logosArray = get_field('logos_story', $queried_object);?>
-						    <?php if( $logosArray ){?>
-								<?php foreach ($logosArray as $key => $logo){ ?>
-									<?php $imgID= get_field('channel_logo',"post_tag_".$logo);?>
-									<?php if ($imgID) { ?>
-									<?php $url = wp_get_attachment_image_src( $imgID, 'large' ); ?>
-									<?php $url = $url['0']; ?>
-									<?php $channelLink= get_field('channel_external_link',"post_tag_".$logo);?>
-									<?php $target=($channelLink?"_blank":"_self");?>
-									<?php $channelLink = ($channelLink?$channelLink:get_bloginfo('url')."/channel/".get_tag($logo)->slug);?>
-										<a href="<?php echo $channelLink;?>" target="<?php echo $target;?>">
-								            <img class="logo-img" title="<?php echo get_tag($logo)->name; ?>" id="logo-<?php echo get_tag($logo)->slug; ?>" src="<?php echo $url;?>"/>
-							            </a>
+				            <div class="logos-container">
+								<?php $logosArray = get_field('logos_story', $queried_object);?>
+							    <?php if( $logosArray ){?>
+									<?php foreach ($logosArray as $key => $logo){ ?>
+										<?php $imgID= get_field('channel_logo',"post_tag_".$logo);?>
+										<?php if ($imgID) { ?>
+										<?php $url = wp_get_attachment_image_src( $imgID, 'large' ); ?>
+										<?php $url = $url['0']; ?>
+										<?php $channelLink= get_field('channel_external_link',"post_tag_".$logo);?>
+										<?php $target=($channelLink?"_blank":"_self");?>
+										<?php $channelLink = ($channelLink?$channelLink:get_bloginfo('url')."/channel/".get_tag($logo)->slug);?>
+											<a href="<?php echo $channelLink;?>" target="<?php echo $target;?>">
+									            <img class="logo-img" title="<?php echo get_tag($logo)->name; ?>" id="logo-<?php echo get_tag($logo)->slug; ?>" src="<?php echo $url;?>"/>
+								            </a>
+										<?php } ?>
 									<?php } ?>
-								<?php } ?>
-							<?php } else { get_template_part('social');} ?>
+								<?php } else { get_template_part('social');} ?>
+				            </div>
 			            </div>
 			        </div>
 
@@ -196,18 +203,21 @@
 					    <?php if( $imgHeader ):?>
 		        		<?php $url = wp_get_attachment_image_src( $imgHeader, 'large' );?>
 		        		<?php $url = $url['0']; ?>
-			            <img class="tag-header-img" title="<?php echo $queried_object->name; ?>" src="<?php echo $url;?>"/>
+			            <img class="main-header-img" title="<?php echo $queried_object->name; ?>" src="<?php echo $url;?>"/>
 				        <?php else:?>
 						<div class="query-title">
 							<span class="query"><?php echo $queried_object->name; ?></span>
 							<?php echo "<span class='nomad-x'>x</span>";?>
-				            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
-				            </div>
+				            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+			            </div>
 				        <?php endif; ?>
 			            <div class="project-description show-desc-onHover">
+			            	<div class="project-description-close">
+			            		<i class="fa fa-close"></i>
+			            	</div>
 				            <?php $description=tag_description();?>
-				            <p><?php echo ($description?$description:bloginfo('description'));?>
-							<p><?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share.</a>.','nomadlive');?></p>
+				            <?php echo ($description?$description:bloginfo('description'));?>
+							<p><?php echo __('NOMAD is a 24/7 livecast. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
 					
 			            </div>
 			            </div>   
@@ -240,16 +250,29 @@
 			        	    <div class="toggle-sidebar sf-rollback non-selectable">
 				    	    	<img src="<?php echo get_template_directory_uri();?>/inc/img/menu-button-nomad.jpg"/>
 			        	    </div>
-		            <div id="single-query-title" class="query-title">
-						<span class="query"><?php the_title(); ?></span>
-						<?php echo "<span class='nomad-x'>x</span>";?>
-			            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
-		            </div>
+				            <div id="single-query-title" class="query-title">
+								<span class="query"><?php the_title(); ?></span>
+								<span class='nomad-x'>x</span>
+					            <img class="small-header-img" src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo-cropped.png"/>
+				            </div>
+				        </div>
 		            </div>   
 		            <div id="social-links-menu" class="header-menu">
 						<?php get_template_part('social'); ?>
 		            </div>
 	            <?php }?>
+        </div>
+<?php } else if (is_page()){ ?>
+		<div id="nomad-header-title" class="header-title">
+        	<div id="nomad-header-img" class="header-img">
+        	    <div class="toggle-sidebar sf-rollback non-selectable">
+	    	    	<img src="<?php echo get_template_directory_uri();?>/inc/img/menu-button-nomad.jpg"/>
+        	    </div>	
+	            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo.png" alt="NOMADlive.tv"/>
+            </div>   
+            <div id="social-links-menu" class="header-menu">
+				<?php get_template_part('social'); ?>
+            </div>
         </div>
 <?php } else { ?>
 		<div id="nomad-header-title" class="header-title">
@@ -259,14 +282,10 @@
         	    </div>	
 	            <img src="<?php echo get_template_directory_uri();?>/inc/img/nomad-live-logo.png" alt="NOMADlive.tv"/>
 	            <div class="project-description show-desc-onHover">
-	            <p><?php bloginfo('description'); ?><br/>
-				<?php echo __('NOMAD is a movement. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
-	            </div>
-	            <div class="project-description show-desc-onHover">
+	            	<div class="project-description-close"><i class="fa fa-close"></i></div>
 		            <?php $description=category_description();?>
 		            <p><?php echo ($description?$description:bloginfo('description'));?>
 					<p><?php echo __('NOMAD is a 24/7 livecast. Join by <a class="thumbSubmit" href="#">sending us your facetime/skype/hangout info or any video link you would like to share</a>.','nomadlive');?></p>
-		
 	            </div>
             </div>   
             <div id="social-links-menu" class="header-menu">
